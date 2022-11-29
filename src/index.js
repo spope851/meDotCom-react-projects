@@ -10,8 +10,6 @@ root.render(
         async () => await
           fetch(`/api/solveCube?facelets=${getFacelets()}`)
             .then(res => res.json())
-            .then(data => data.join(' ')
-          )
       } />
   </React.StrictMode>
 );
