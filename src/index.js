@@ -8,7 +8,7 @@ root.render(
     <CubeSolver
       solve={
         async () => await
-          fetch(`api/solveCube?facelets=${getFacelets()}`)
+          fetch(`/api/solveCube?facelets=${getFacelets()}`)
             .then(res => res.json())
             .then(data => data.join(' ')
           )
