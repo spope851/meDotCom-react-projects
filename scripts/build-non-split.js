@@ -1,5 +1,4 @@
 const rewire = require('rewire')
-const cssExtract = require('mini-css-extract-plugin')
 const defaults = rewire('react-scripts/scripts/build.js')
 let config = defaults.__get__('config')
 
@@ -30,7 +29,7 @@ console.info(`RENAME: ${jsbefore} to ${OUTPUT_FNAME.js}`)
 
 // Renames main.[contenthash:8].css to main.css
 for (var i = 0; i < config.plugins.length; i++) {
-    if (config.plugins[i] instanceof cssExtract) {
+    if (Object.keys(config.plugins[i]).includes('_sortedModulesCache')) {
         let cssBefore = config.plugins[i].options.filename
         config.plugins[i].options.filename = OUTPUT_FNAME.css
         config.plugins[i].options.chunkFilename = OUTPUT_FNAME.css
