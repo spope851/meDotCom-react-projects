@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client'
 import { Timeclock } from 'react-timeclock'
 import { CubeSolver, getFacelets } from '3x3-cube'
 
-const timesheetRoot = ReactDOM.createRoot(document.getElementById('react-timeclock'));
+const timesheetRoot = ReactDOM.createRoot(document.getElementById('react-timeclock-demo'));
 timesheetRoot.render(
   <React.StrictMode>
     <Timeclock />
   </React.StrictMode>
 );
 
-const cubeSolverRoot = ReactDOM.createRoot(document.getElementById('react-cube-solver'));
+const cubeSolverRoot = ReactDOM.createRoot(document.getElementById('3x3-cube-demo'));
 cubeSolverRoot.render(
   <React.StrictMode>
     <CubeSolver
