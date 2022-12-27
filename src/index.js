@@ -1,9 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { CubeSolver, getFacelets } from '3x3-cube';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { Timeclock } from 'react-timeclock'
+import { CubeSolver, getFacelets } from '3x3-cube'
 
-const root = ReactDOM.createRoot(document.getElementById('react-cube-solver'));
-root.render(
+const timesheetRoot = ReactDOM.createRoot(document.getElementById('react-timeclock'));
+timesheetRoot.render(
+  <React.StrictMode>
+    <Timeclock />
+  </React.StrictMode>
+);
+
+const cubeSolverRoot = ReactDOM.createRoot(document.getElementById('react-cube-solver'));
+cubeSolverRoot.render(
   <React.StrictMode>
     <CubeSolver
       solve={
